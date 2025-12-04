@@ -22,11 +22,13 @@ async function startsite() {
       const Rating = Row.insertCell(2)
       const Genre = Row.insertCell(3)
       const Synopsis = Row.insertCell(4)
+      const Year = Row.insertCell(5)
       ID.textContent = moventry.id
       Titlet.textContent = moventry.title
       Rating.textContent = moventry.rating
       Genre.textContent = moventry.genre
       Synopsis.textContent = moventry.synopsis
+      Year.textContent = moventry.year
     });
 }
 
@@ -54,11 +56,13 @@ BS.addEventListener("input", async () => {
         const Rating = Row.insertCell(2)
         const Genre = Row.insertCell(3)
         const Synopsis = Row.insertCell(4)
+        const Year = Row.insertCell(5)
         ID.textContent = moventry.id
         Titlet.textContent = moventry.title
         Rating.textContent = moventry.rating
         Genre.textContent = moventry.genre
         Synopsis.textContent = moventry.synopsis
+        Year.textContent = moventry.year
     });
 })
 
@@ -72,15 +76,18 @@ next.addEventListener("click", async () => {
         const Rating = Row.insertCell(2)
         const Genre = Row.insertCell(3)
         const Synopsis = Row.insertCell(4)
+        const Year = Row.insertCell(5)
         ID.textContent = moventry.id
         Titlet.textContent = moventry.title
         Rating.textContent = moventry.rating
         Genre.textContent = moventry.genre
         Synopsis.textContent = moventry.synopsis
+        Year.textContent = moventry.year
     });
 })
 
 startsite()
+
 
 
 
