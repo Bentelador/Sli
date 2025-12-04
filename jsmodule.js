@@ -27,6 +27,7 @@ button.addEventListener("click", async () => {
     window.location.href='html.html?search='+search.value
 })
 
+startsite()
 
 
 
