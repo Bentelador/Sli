@@ -24,10 +24,11 @@ async function startsite() {
 }
 
 button.addEventListener("click", async () => {
-    window.location.href='html.html?search='+search.value
+    window.location.href='main.html?search='+search.value
 })
 
 startsite()
+
 
 
 
