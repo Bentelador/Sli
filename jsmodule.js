@@ -1,4 +1,4 @@
-import ben from "./js.js"
+import ben, { genre } from "./js.js"
 const urlParams = new URLSearchParams(window.location.search)
 const ser = urlParams.get('search')
 const Tab = document.getElementById("table")
@@ -24,10 +24,15 @@ async function startsite() {
 }
 
 button.addEventListener("click", async () => {
-    window.location.href='main.html?search='+search.value
+    const str = 'main.html?search='+search.value
+    const linkstr = genre(BS, str)
+    
+    window.location.href=linkstr
+    
 })
 
 startsite()
+
 
 
 
