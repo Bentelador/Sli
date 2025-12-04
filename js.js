@@ -23,17 +23,38 @@ async function genre(BS, str){
 
 async function sorta(sort,result) {
   let bb;
-  if (sort == "year") {
+  if (sort == "year_old") {
         bb = result.sort((yearA,yearB) => {
           return yearA.year - yearB.year;
         })
     }
-  if (sort == "year_old") {
+  if (sort == "year") {
         bb = result.sort((yearA,yearB) => {
           return yearB.year - yearA.year;
         })
     }
-  console.log(bb)
+  if (sort == "rating") {
+        bb = result.sort((A,B) => {
+          return B.rating - A.rating;
+        })
+    }
+  if (sort == "title") {
+        bb = result.sort((A,B) => {
+          const nameA = A.name.toLowerCase();
+          const nameB = B.name.toLowerCase();
+        
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+          return 0;
+        })
+    }
+  if (sort == "relevance") {
+        bb = result
+    }
   return bb
 }
 
@@ -52,13 +73,13 @@ async function genresearch(serch, BS, sort){
       const res = jsonData.filter(n => arr.every(genreArray => n.genre.includes(genreArray)))
       result = res.filter(n => n.title.toLowerCase().includes(serch))
       result = sorta(sort,result)
-      console.log(result)
     })
   return result;
 }
 
 export default ben
 export { genre, genresearch }
+
 
 
 
