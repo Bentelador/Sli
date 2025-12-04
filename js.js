@@ -71,7 +71,7 @@ async function genresearch(serch, BS, sort){
         }
       }
       const res = jsonData.filter(n => arr.every(genreArray => n.genre.includes(genreArray)))
-      resulta = res.filter(n => n.title.toLowerCase().includes(serch))
+      let resulta = res.filter(n => n.title.toLowerCase().includes(serch))
       result = sorta(sort,resulta)
     })
   return result;
@@ -79,6 +79,7 @@ async function genresearch(serch, BS, sort){
 
 export default ben
 export { genre, genresearch }
+
 
 
 
