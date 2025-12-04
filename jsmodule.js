@@ -1,4 +1,4 @@
-import ben, { genre , searchfunc } from "./js.js"
+import ben, { searchfunc } from "./js.js"
 const urlParams = new URLSearchParams(window.location.search)
 const ser = urlParams.get('search')
 const genrearr = urlParams.getAll('genre') || []
@@ -84,6 +84,7 @@ next.addEventListener("click", async () => {
 })
 
 startsite()
+
 
 
 
