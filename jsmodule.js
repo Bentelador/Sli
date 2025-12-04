@@ -39,7 +39,7 @@ BS.addEventListener("input", async () => {
     for (let i = rowCount - 1; i > 0; i--) {
         Tab.deleteRow(i);
     }
-    if (search.value.length <= 3) {
+    if (search.value.length < 3) {
         return false;
     }
     const benner = await genresearch(search.value, BS)
@@ -59,6 +59,7 @@ BS.addEventListener("input", async () => {
 })
 
 startsite()
+
 
 
 
