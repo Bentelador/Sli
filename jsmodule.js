@@ -1,13 +1,14 @@
 import ben, { genre } from "./js.js"
 const urlParams = new URLSearchParams(window.location.search)
 const ser = urlParams.get('search')
+const genre = urlParams.get('genre')
 const Tab = document.getElementById("table")
 const button = document.getElementById("bun")
 const BS = document.getElementById("Buttons")
 const search = document.getElementById("search")
 
 async function startsite() {
-    const benner = await ben(ser, BS)
+    const benner = await ben(ser, genre)
     benner.forEach(moventry => {
       const Row = Tab.insertRow()
       const ID = Row.insertCell(0)
@@ -32,6 +33,7 @@ button.addEventListener("click", async () => {
 })
 
 startsite()
+
 
 
 
