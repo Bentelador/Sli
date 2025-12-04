@@ -40,8 +40,8 @@ async function sorta(sort,result) {
     }
   if (sort == "title") {
         bb = result.sort((A,B) => {
-          const nameA = A.name.toLowerCase();
-          const nameB = B.name.toLowerCase();
+          const nameA = A.title.toLowerCase();
+          const nameB = B.title.toLowerCase();
         
           if (nameA < nameB) {
             return -1;
@@ -79,6 +79,7 @@ async function genresearch(serch, BS, sort){
 
 export default ben
 export { genre, genresearch }
+
 
 
 
