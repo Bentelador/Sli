@@ -25,12 +25,12 @@ async function sorta(sort,result) {
   let bb;
   if (sort == "year") {
         bb = result.sort((yearA,yearB) => {
-          return yearA.id - yearB.id;
+          return yearA.year - yearB.year;
         })
     }
   if (sort == "year_old") {
         bb = result.sort((yearA,yearB) => {
-          return yearB.id - yearA.id;
+          return yearB.year - yearA.year;
         })
     }
   console.log(bb)
@@ -59,6 +59,7 @@ async function genresearch(serch, BS, sort){
 
 export default ben
 export { genre, genresearch }
+
 
 
 
