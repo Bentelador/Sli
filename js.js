@@ -15,17 +15,15 @@ async function genre(BS, str){
   const newstr = str
     for (let i = 0; i < cont.length; i++) {
       if (cont[i].checked == true) {
-        arr.push(cont[i].name)
+        newstr += "&genre="+cont[i].name
       }
     }
-  arr.foreach(Gen => {
-    newstr += "&genre="+Gen
-  })
   return newstr;
 }
 
 export default ben
 export { genre }
+
 
 
 
