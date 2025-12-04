@@ -26,13 +26,14 @@ async function startsite() {
 
 button.addEventListener("click", async () => {
     const str = 'main.html?search='+search.value
-    const linkstr = genre(BS, str)
+    const linkstr = await genre(BS, str)
     
     window.location.href=linkstr
     
 })
 
 startsite()
+
 
 
 
