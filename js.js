@@ -21,17 +21,19 @@ async function genre(BS, str){
   return newstr;
 }
 
-function sorta(sort,result) {
+async function sorta(sort,result) {
+  let bb;
   if (sort == "year") {
-        result.sort((yearA,yearB) => {
+        bb = result.sort((yearA,yearB) => {
           return yearA.id - yearB.id;
         })
     }
   if (sort == "year_old") {
-        result.sort((yearA,yearB) => {
+        bb = result.sort((yearA,yearB) => {
           return yearB.id - yearA.id;
         })
     }
+  return bb
 }
 
 async function genresearch(serch, BS, sort){
@@ -56,6 +58,7 @@ async function genresearch(serch, BS, sort){
 
 export default ben
 export { genre, genresearch }
+
 
 
 
