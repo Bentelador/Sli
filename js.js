@@ -39,7 +39,7 @@ async function sorta(sort,result) {
         })
     }
   if (sort == "title") {
-        const alphabeticOnlyRegex = /[^a-zA-Z]/g; 
+        const alphabeticOnlyRegex = /[^a-zA-Z0-9]/g; 
         bb = result.sort((A,B) => {
           const nameA = A.title.toLowerCase().replace(alphabeticOnlyRegex, "");
           const nameB = B.title.toLowerCase().replace(alphabeticOnlyRegex, "");
@@ -79,6 +79,7 @@ async function genresearch(serch, BS, sort){
 
 export default ben
 export { genre, genresearch }
+
 
 
 
