@@ -65,7 +65,7 @@ next.addEventListener("click", async () => {
     const tabnum = Tab.rows.length
     console.log(tabnum)
     const benner = await genresearch(search.value, BS)
-    console.log(tabnum)
+    console.log(benner)
     benner.slice(tabnum,tabnum+10).forEach(moventry => {
         console.log(tabnum)
         const Row = Tab.insertRow()
@@ -83,6 +83,7 @@ next.addEventListener("click", async () => {
 })
 
 startsite()
+
 
 
 
