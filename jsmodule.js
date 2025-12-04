@@ -9,6 +9,9 @@ const search = document.getElementById("search")
 search.value = ser
 
 async function startsite() {
+    for (let i = rowCount - 1; i > 0; i--) {
+        Tab.deleteRow(i);
+    }
     console.log(typeof genrearr , genrearr)
     const benner = await ben(ser, genrearr)
     benner.forEach(moventry => {
@@ -60,6 +63,7 @@ BS.addEventListener("input", async () => {
 })
 
 startsite()
+
 
 
 
