@@ -1,4 +1,4 @@
-import ben, { genre , search } from "./js.js"
+import ben, { genre , searchfunc } from "./js.js"
 const urlParams = new URLSearchParams(window.location.search)
 const ser = urlParams.get('search')
 const genrearr = urlParams.getAll('genre') || []
@@ -42,7 +42,7 @@ BS.addEventListener("input", async () => {
         startsite()
         return false;
     }
-    const benner = await search(search.value, BS, sort.value)
+    const benner = await searchfunc(search.value, BS, sort.value)
     while (Tab.rows.length > 1) {
         Tab.deleteRow(1);
     }
@@ -65,7 +65,7 @@ BS.addEventListener("input", async () => {
 
 next.addEventListener("click", async () => {
     const tabnum = Tab.rows.length
-    const benner = await search(search.value, BS, sort.value)
+    const benner = await searchfunc(search.value, BS, sort.value)
     benner.slice(tabnum,tabnum+10).forEach(moventry => {
         const Row = Tab.insertRow()
         const ID = Row.insertCell(0)
@@ -84,6 +84,7 @@ next.addEventListener("click", async () => {
 })
 
 startsite()
+
 
 
 
