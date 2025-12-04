@@ -38,10 +38,6 @@ button.addEventListener("click", async () => {
 })
 
 BS.addEventListener("input", async () => {
-    if (search.value.length < 3) {
-        startsite()
-        return false;
-    }
     const benner = await searchfunc(search.value, BS, sort.value)
     while (Tab.rows.length > 1) {
         Tab.deleteRow(1);
@@ -84,6 +80,7 @@ next.addEventListener("click", async () => {
 })
 
 startsite()
+
 
 
 
