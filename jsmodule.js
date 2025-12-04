@@ -5,7 +5,8 @@ const Tab = document.getElementById("table")
 const button = document.getElementById("bun")
 const BS = document.getElementById("Buttons")
 const search = document.getElementById("search")
-button.addEventListener("click", async () => {
+
+async function startsite() {
     const benner = await ben(ser, BS)
     benner.forEach(moventry => {
       const Row = Tab.insertRow()
@@ -20,7 +21,12 @@ button.addEventListener("click", async () => {
       Genre.textContent = moventry.genre
       Synopsis.textContent = moventry.synopsis
     });
+}
+
+button.addEventListener("click", async () => {
+    window.location.href='html.html?search='+search.value
 })
+
 
 
 
