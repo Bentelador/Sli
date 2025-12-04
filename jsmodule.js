@@ -8,6 +8,7 @@ const BS = document.getElementById("Buttons")
 const search = document.getElementById("search")
 
 async function startsite() {
+    console.log(typeof genrearr , genrearr)
     const benner = await ben(ser, genrearr)
     benner.forEach(moventry => {
       const Row = Tab.insertRow()
@@ -33,6 +34,7 @@ button.addEventListener("click", async () => {
 })
 
 startsite()
+
 
 
 
