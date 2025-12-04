@@ -84,7 +84,8 @@ async function searchfunc(serch, BS, sort){
 }
 
 export default ben
-export { genre, searchfunc }
+export { searchfunc }
+
 
 
 
