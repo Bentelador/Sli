@@ -9,7 +9,7 @@ async function ben(serch, BS){
 }
 
 function matching(result, ss) {
-    const MA = result.title.toLowerCase()
+    const MA = result.toLowerCase()
     const ser = ss.toLowerCase()
     let matches = 0
    if (MA === ser) {
@@ -85,6 +85,7 @@ async function searchfunc(serch, BS, sort){
 
 export default ben
 export { searchfunc }
+
 
 
 
