@@ -6,6 +6,7 @@ const Tab = document.getElementById("table")
 const button = document.getElementById("bun")
 const BS = document.getElementById("Buttons")
 const search = document.getElementById("search")
+search.value = ser
 
 async function startsite() {
     console.log(typeof genrearr , genrearr)
@@ -51,6 +52,7 @@ async function changed() {
 }
 
 startsite()
+
 
 
 
