@@ -16,7 +16,20 @@ async function ben(serch, BS){
   return result;
 }
 
+async function genre(BS){
+  const cont = BS.children
+  const arr = []
+    for (let i = 0; i < cont.length; i++) {
+      if (cont[i].checked == true) {
+        arr.push(cont[i].name)
+      }
+    }
+  return arr
+}
+
 export default ben
+export { genre }
+
 
 
 
