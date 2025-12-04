@@ -8,7 +8,24 @@ async function ben(serch, BS){
   return result;
 }
 
-async function sorta(sort,result) {
+function matching(result, ss) {
+    const MA = result.title.toLowerCase()
+    const ser = ss.toLowerCase()
+    let matches = 0
+   if (MA === ser) {
+        matches += 3;
+    }
+    else if (MA.startsWith(ser)) {
+        matches += 2;
+    }
+    else if (MA.includes(ser)) {
+        matches += 1;
+    }
+
+    return matches;
+}
+
+async function sorta(sort,result,ss) {
   let bb;
   if (sort == "year_old") {
         bb = result.sort((yearA,yearB) => {
@@ -40,7 +57,9 @@ async function sorta(sort,result) {
         })
     }
   if (sort == "relevance") {
-        bb = result
+    bb = result.sort((a,b) => {
+      return matching(b.title,ss) - matching(b.title,ss);
+    })
     }
   return bb
 }
@@ -59,13 +78,14 @@ async function search(serch, BS, sort){
       }
       const res = jsonData.filter(n => arr.every(genreArray => n.genre.includes(genreArray)))
       let resulta = res.filter(n => n.title.toLowerCase().includes(serch))
-      result = sorta(sort,resulta)
+      result = sorta(sort,resulta,serch)
     })
   return result;
 }
 
 export default ben
 export { genre, search }
+
 
 
 
