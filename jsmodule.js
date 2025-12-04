@@ -65,10 +65,9 @@ next.addEventListener("click", async () => {
     const tabnum = Tab.rows.length
     console.log(tabnum)
     const benner = await genresearch(search.value, BS)
-    while (Tab.rows.length > 1) {
-        Tab.deleteRow(1);
-    }
+    console.log(tabnum)
     benner.slice(tabnum,tabnum+10).forEach(moventry => {
+        console.log(tabnum)
         const Row = Tab.insertRow()
         const ID = Row.insertCell(0)
         const Titlet = Row.insertCell(1)
@@ -84,6 +83,7 @@ next.addEventListener("click", async () => {
 })
 
 startsite()
+
 
 
 
