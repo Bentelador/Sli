@@ -10,11 +10,11 @@ const search = document.getElementById("search")
 search.value = ser
 
 async function startsite() {
-    const benner = await ben(ser, genrearr).slice(0,10)
+    const benner = await ben(ser, genrearr)
     while (Tab.rows.length > 1) {
         Tab.deleteRow(1);
     }
-    benner.forEach(moventry => {
+    benner.slice(0,10).forEach(moventry => {
       const Row = Tab.insertRow()
       const ID = Row.insertCell(0)
       const Titlet = Row.insertCell(1)
@@ -42,11 +42,11 @@ BS.addEventListener("input", async () => {
         startsite()
         return false;
     }
-    const benner = await genresearch(search.value, BS).slice(0,10)
+    const benner = await genresearch(search.value, BS)
     while (Tab.rows.length > 1) {
         Tab.deleteRow(1);
     }
-    benner.forEach(moventry => {
+    benner.slice(0,10).forEach(moventry => {
         const Row = Tab.insertRow()
         const ID = Row.insertCell(0)
         const Titlet = Row.insertCell(1)
@@ -64,11 +64,11 @@ BS.addEventListener("input", async () => {
 next.addEventListener("click", async () => {
     const tabnum = Tab.rows.length
     console.log(tabnum)
-    const benner = await genresearch(search.value, BS).slice(tabnum,tabnum+10)
+    const benner = await genresearch(search.value, BS)
     while (Tab.rows.length > 1) {
         Tab.deleteRow(1);
     }
-    benner.forEach(moventry => {
+    benner.slice(tabnum,tabnum+10).forEach(moventry => {
         const Row = Tab.insertRow()
         const ID = Row.insertCell(0)
         const Titlet = Row.insertCell(1)
@@ -84,6 +84,7 @@ next.addEventListener("click", async () => {
 })
 
 startsite()
+
 
 
 
