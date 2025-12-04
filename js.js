@@ -33,6 +33,7 @@ async function sorta(sort,result) {
           return yearB.id - yearA.id;
         })
     }
+  console.log(bb)
   return bb
 }
 
@@ -58,6 +59,7 @@ async function genresearch(serch, BS, sort){
 
 export default ben
 export { genre, genresearch }
+
 
 
 
