@@ -64,7 +64,7 @@ async function sorta(sort,result,ss) {
   return bb
 }
 
-async function search(serch, BS, sort){
+async function searchfunc(serch, BS, sort){
   let result;
   await fetch('https://raw.githubusercontent.com/Bentelador/movie-bai/refs/heads/main/MDB.json')
     .then(response => response.json())
@@ -84,7 +84,8 @@ async function search(serch, BS, sort){
 }
 
 export default ben
-export { genre, search }
+export { genre, searchfunc }
+
 
 
 
