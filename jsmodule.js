@@ -1,11 +1,12 @@
 import ben from "./js.js"
-
+const urlParams = new URLSearchParams(window.location.search)
+const ser = urlParams.get('search')
 const Tab = document.getElementById("table")
 const button = document.getElementById("bun")
 const BS = document.getElementById("Buttons")
 const search = document.getElementById("search")
 button.addEventListener("click", async () => {
-    const benner = await ben(search.value, BS)
+    const benner = await ben(ser, BS)
     benner.forEach(moventry => {
       const Row = Tab.insertRow()
       const ID = Row.insertCell(0)
@@ -20,6 +21,7 @@ button.addEventListener("click", async () => {
       Synopsis.textContent = moventry.synopsis
     });
 })
+
 
 
 
