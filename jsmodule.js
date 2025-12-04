@@ -35,12 +35,12 @@ button.addEventListener("click", async () => {
 })
 
 BS.addEventListener("input", async () => {
-    if (search.value.length <= 3 then) {
-        return false;
-    }
     const rowCount = Tab.rows.length;
     for (let i = rowCount - 1; i > 0; i--) {
         Tab.deleteRow(i);
+    }
+    if (search.value.length <= 3 then) {
+        return false;
     }
     const benner = await genresearch(search.value, BS)
     benner.forEach(moventry => {
@@ -59,6 +59,7 @@ BS.addEventListener("input", async () => {
 })
 
 startsite()
+
 
 
 
