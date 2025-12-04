@@ -10,14 +10,11 @@ const search = document.getElementById("search")
 search.value = ser
 
 async function startsite() {
-    const benner = await ben(ser, genrearr)
+    const benner = await ben(ser, genrearr).slice(0,10)
     while (Tab.rows.length > 1) {
         Tab.deleteRow(1);
     }
     benner.forEach(moventry => {
-        if (index >= 10) {
-            break;
-        }
       const Row = Tab.insertRow()
       const ID = Row.insertCell(0)
       const Titlet = Row.insertCell(1)
@@ -90,6 +87,7 @@ next.addEventListener("click", async () => {
 })
 
 startsite()
+
 
 
 
