@@ -4,13 +4,14 @@ const ser = urlParams.get('search')
 const genrearr = urlParams.getAll('genre') || []
 const Tab = document.getElementById("table")
 const button = document.getElementById("bun")
+const sort = document.getElementById("sortSelect")
 const next = document.getElementById("next")
 const BS = document.getElementById("Buttons")
 const search = document.getElementById("search")
 search.value = ser
 
 async function startsite() {
-    const benner = await ben(ser, genrearr)
+    const benner = await ben(ser, genrearr, sort.value)
     while (Tab.rows.length > 1) {
         Tab.deleteRow(1);
     }
@@ -42,7 +43,7 @@ BS.addEventListener("input", async () => {
         startsite()
         return false;
     }
-    const benner = await genresearch(search.value, BS)
+    const benner = await genresearch(search.value, BS, sort.value)
     while (Tab.rows.length > 1) {
         Tab.deleteRow(1);
     }
@@ -63,7 +64,7 @@ BS.addEventListener("input", async () => {
 
 next.addEventListener("click", async () => {
     const tabnum = Tab.rows.length
-    const benner = await genresearch(search.value, BS)
+    const benner = await genresearch(search.value, BS, sort.value)
     benner.slice(tabnum,tabnum+10).forEach(moventry => {
         const Row = Tab.insertRow()
         const ID = Row.insertCell(0)
@@ -80,6 +81,7 @@ next.addEventListener("click", async () => {
 })
 
 startsite()
+
 
 
 
