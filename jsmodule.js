@@ -63,11 +63,8 @@ BS.addEventListener("input", async () => {
 
 next.addEventListener("click", async () => {
     const tabnum = Tab.rows.length
-    console.log(tabnum)
     const benner = await genresearch(search.value, BS)
-    console.log(benner)
     benner.slice(tabnum,tabnum+10).forEach(moventry => {
-        console.log(tabnum)
         const Row = Tab.insertRow()
         const ID = Row.insertCell(0)
         const Titlet = Row.insertCell(1)
@@ -83,6 +80,7 @@ next.addEventListener("click", async () => {
 })
 
 startsite()
+
 
 
 
