@@ -21,7 +21,20 @@ async function genre(BS, str){
   return newstr;
 }
 
-async function genresearch(serch, BS){
+function sorta(sort) {
+  if (sort == "year") {
+        result.sort((yearA,yearB => {
+          return yearA.id - yearB.id;
+        }
+    }
+  if (sort == "year_old") {
+        result.sort((yearA,yearB => {
+          return yearB.id - yearA.id;
+        }
+    }
+}
+
+async function genresearch(serch, BS, sort){
   let result;
   await fetch('https://raw.githubusercontent.com/Bentelador/movie-bai/refs/heads/main/MDB.json')
     .then(response => response.json())
@@ -34,13 +47,15 @@ async function genresearch(serch, BS){
         }
       }
       const res = jsonData.filter(n => arr.every(genreArray => n.genre.includes(genreArray)))
-      result = res.filter(n => n.title.toLowerCase().includes(serch));
+      result = res.filter(n => n.title.toLowerCase().includes(serch))
+      result = sorta(result)
     })
   return result;
 }
 
 export default ben
 export { genre, genresearch }
+
 
 
 
