@@ -58,9 +58,10 @@ async function sorta(sort,result,ss) {
     }
   if (sort == "relevance") {
     bb = result.sort((a,b) => {
-      return matching(b.title,ss) - matching(b.title,ss);
+      return matching(b.title,ss) - matching(a.title,ss);
     })
-    }
+    console.log(bb)
+  }
   return bb
 }
 
@@ -85,6 +86,7 @@ async function searchfunc(serch, BS, sort){
 
 export default ben
 export { searchfunc }
+
 
 
 
