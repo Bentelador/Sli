@@ -46,7 +46,7 @@ BS.addEventListener("input", async () => {
     while (Tab.rows.length > 1) {
         Tab.deleteRow(1);
     }
-    benner.forEach((moventry, index) => {
+    benner.forEach(moventry => {
         const Row = Tab.insertRow()
         const ID = Row.insertCell(0)
         const Titlet = Row.insertCell(1)
@@ -68,10 +68,7 @@ next.addEventListener("click", async () => {
     while (Tab.rows.length > 1) {
         Tab.deleteRow(1);
     }
-    benner.forEach((moventry, index) => {
-        if (index >= 10) {
-            break;
-        }
+    benner.forEach(moventry => {
         const Row = Tab.insertRow()
         const ID = Row.insertCell(0)
         const Titlet = Row.insertCell(1)
@@ -87,6 +84,7 @@ next.addEventListener("click", async () => {
 })
 
 startsite()
+
 
 
 
