@@ -1,4 +1,4 @@
-import ben, { genre } from "./js.js"
+import ben, { genre , genresearch } from "./js.js"
 const urlParams = new URLSearchParams(window.location.search)
 const ser = urlParams.get('search')
 const genrearr = urlParams.getAll('genre') || []
@@ -33,7 +33,26 @@ button.addEventListener("click", async () => {
     
 })
 
+async function changed() {
+    const benner = await genresearch(search.value, BS)
+    benner.forEach(moventry => {
+      const Row = Tab.insertRow()
+      const ID = Row.insertCell(0)
+      const Titlet = Row.insertCell(1)
+      const Rating = Row.insertCell(2)
+      const Genre = Row.insertCell(3)
+      const Synopsis = Row.insertCell(4)
+      ID.textContent = moventry.id
+      Titlet.textContent = moventry.title
+      Rating.textContent = moventry.rating
+      Genre.textContent = moventry.genre
+      Synopsis.textContent = moventry.synopsis
+    });
+}
+
 startsite()
+
+
 
 
 
