@@ -3,7 +3,8 @@ async function ben(serch, BS){
   await fetch('https://raw.githubusercontent.com/Bentelador/movie-bai/refs/heads/main/MDB.json')
     .then(response => response.json())
     .then(jsonData => {
-      result = jsonData.filter(n => n.title.toLowerCase().includes(serch));
+      let aresult = jsonData.filter(n => n.title.toLowerCase().includes(serch));
+      result = sorta(sort,aresult,serch)
     })
   return result;
 }
@@ -77,14 +78,15 @@ async function searchfunc(serch, BS, sort){
         }
       }
       const res = jsonData.filter(n => arr.every(genreArray => n.genre.includes(genreArray)))
-      let resulta = res.filter(n => n.title.toLowerCase().includes(serch))
-      result = sorta(sort,resulta,serch)
+      let aresult = res.filter(n => n.title.toLowerCase().includes(serch))
+      result = sorta(sort,aresult,serch)
     })
   return result;
 }
 
 export default ben
 export { searchfunc }
+
 
 
 
