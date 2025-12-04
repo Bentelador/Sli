@@ -12,7 +12,7 @@ async function ben(serch, BS){
 async function genre(BS, str){
   const cont = BS.children
   const arr = []
-  const newstr = str
+  let newstr = str
     for (let i = 0; i < cont.length; i++) {
       if (cont[i].checked == true) {
         newstr += "&genre="+cont[i].name
@@ -23,6 +23,7 @@ async function genre(BS, str){
 
 export default ben
 export { genre }
+
 
 
 
