@@ -9,12 +9,10 @@ const search = document.getElementById("search")
 search.value = ser
 
 async function startsite() {
-    const rowCount = Tab.rows.length;
-    for (let i = rowCount - 1; i > 0; i--) {
-        Tab.deleteRow(i);
-    }
-    console.log(typeof genrearr , genrearr)
     const benner = await ben(ser, genrearr)
+    while (Tab.rows.length > 1) {
+        Tab.deleteRow(1);
+    }
     benner.forEach(moventry => {
       const Row = Tab.insertRow()
       const ID = Row.insertCell(0)
@@ -43,11 +41,10 @@ BS.addEventListener("input", async () => {
         startsite()
         return false;
     }
-    const rowCount = Tab.rows.length;
-    for (let i = rowCount - 1; i > 0; i--) {
-        Tab.deleteRow(i);
-    }
     const benner = await genresearch(search.value, BS)
+    while (Tab.rows.length > 1) {
+        Tab.deleteRow(1);
+    }
     benner.forEach(moventry => {
         const Row = Tab.insertRow()
         const ID = Row.insertCell(0)
@@ -64,6 +61,7 @@ BS.addEventListener("input", async () => {
 })
 
 startsite()
+
 
 
 
