@@ -20,12 +20,13 @@ async function genre(BS, str){
     }
   arr.foreach(Gen => {
     newstr += "&genre="+Gen
-  }
+  })
   return newstr;
 }
 
 export default ben
 export { genre }
+
 
 
 
