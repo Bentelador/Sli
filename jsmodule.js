@@ -35,6 +35,11 @@ button.addEventListener("click", async () => {
 })
 
 BS.addEventListener("change", async () => {
+    const rowCount = Tab.rows.length;
+    
+  for (let i = rowCount - 1; i > 0; i--) {
+    Tab.deleteRow(i);
+  }
 const benner = await genresearch(search.value, BS)
 benner.forEach(moventry => {
     const Row = Tab.insertRow()
@@ -52,6 +57,7 @@ benner.forEach(moventry => {
 })
 
 startsite()
+
 
 
 
