@@ -9,6 +9,7 @@ const search = document.getElementById("search")
 search.value = ser
 
 async function startsite() {
+    const rowCount = Tab.rows.length;
     for (let i = rowCount - 1; i > 0; i--) {
         Tab.deleteRow(i);
     }
@@ -63,6 +64,7 @@ BS.addEventListener("input", async () => {
 })
 
 startsite()
+
 
 
 
