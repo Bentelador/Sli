@@ -1,7 +1,7 @@
 import ben, { genre } from "./js.js"
 const urlParams = new URLSearchParams(window.location.search)
 const ser = urlParams.get('search')
-const genre = urlParams.get('genre')
+const genre = urlParams.get('genre') || []
 const Tab = document.getElementById("table")
 const button = document.getElementById("bun")
 const BS = document.getElementById("Buttons")
@@ -33,6 +33,7 @@ button.addEventListener("click", async () => {
 })
 
 startsite()
+
 
 
 
